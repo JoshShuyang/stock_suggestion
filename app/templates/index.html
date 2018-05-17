@@ -1,235 +1,256 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--
 
-  <head>
+Template 2091 Ziggy
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+http://www.tooplate.com/view/2091-ziggy
 
-    <title>Stock Portfolio Suggestion Engine</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="{{ url_for('static',filename='vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-    <!-- Plugin CSS -->
-    <link href="{{ url_for('static',filename='vendor/magnific-popup/magnific-popup.css') }}" rel="stylesheet">
-
-    <!-- Custom styles -->
-    <link href="{{ url_for('static',filename='css/creative.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static',filename='css/crazy_invest.css') }}" rel="stylesheet">
-
-  </head>
-
-  <body id="page-top">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">CRAZY INVESTMENT</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Try</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <header class="masthead text-center text-white d-flex">
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h1 class="text-uppercase">
-              <strong>INVEST</strong>
-            </h1>
-            <hr>
-          </div>
-          <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5" id="header_subtitle">with this remarkable stock portfolio suggestion engine</p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">TRY IT NOW</a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Select Your Strategy</h2>
-            <hr class="my-4">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <form id="strategy_selection_form" action = "" method="post" name="Strategy">
-          <input type="hidden" name="strategies" id="selected_strategies_val">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 text-center strategy-container">
-              <div class="service-box mt-5 mx-auto">
-                <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
-                <h3 class="mb-3">Quality Investing</h3><span class="hidden strategy-key">Quality</span>
-                <p class="text-muted mb-0">Choose best overall rather than best-in-class</p>
-                <div class="gap-small"></div>
-                <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-checked-icon invisible"></i>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center strategy-container">
-              <div class="service-box mt-5 mx-auto">
-                <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
-                <h3 class="mb-3">Growth Investing</h3><span class="hidden strategy-key">Growth</span>
-                <p class="text-muted mb-0">Invest in companies that exhibit signs of growth</p>
-                <div class="gap-small"></div>
-                <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-checked-icon invisible"></i>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center strategy-container">
-              <div class="service-box mt-5 mx-auto">
-                <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
-                <h3 class="mb-3">Index Investing</h3><span class="hidden strategy-key">Index</span>
-                <p class="text-muted mb-0">Track prominent indexes like the SP 500</p>
-                <div class="gap-small"></div>
-                <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-checked-icon invisible"></i>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center strategy-container">
-              <div class="service-box mt-5 mx-auto">
-                <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
-                <h3 class="mb-3">Ethical Investing</h3><span class="hidden strategy-key">Ethical</span>
-                <p class="text-muted mb-0">Consider both financial return and social good</p>
-                <div class="gap-small"></div>
-                <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-checked-icon invisible"></i>
-              </div>
-            </div>
-          </div>
+-->
+        <title>Ziggy HTML Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
-          <div class="gap-small"></div>
-          <div class="row">
-            <div class="container text-center">
-              <input type="text" name="amount" id="input_amount" placeholder=" Amount: " size="20">
-              <div class="gap-small"></div>
-              <p class="btn btn-xl sr-button" id="selection_hint" style="color: #f05f40">One or Two Strategies And above 5000 Amount</p>
-              <div id="submit_btn_container">
-                <a class="btn btn-xl btn-primary" href="javascript:void(0)" id="submit_strategy_selection">Suggestion</a>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../static/css/fontAwesome.css">
+        <link rel="stylesheet" href="../static/css/tooplate-style.css">
+
+        <script src="../static/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        
+
+        <section class="first-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="text-content">
+                  <h2>Welcome To Ziggy</h2>
+                  <div class="line-dec"></div>
+                  <span>This is clean &amp; professional html template</span>
+                </div>
               </div>
             </div>
           </div>
-        </form>
-      </div>
-    </section>
+        </section>
 
-    <section id="about" class="bg-dark text-white">
-      <div class="container text-center">
-        <h2 class="section-heading">About Our Team</h2>
-        <hr class="my-4">
-        <div class="row row-wrap" data-gutter="60">
-          
-          <div class="col-md-3">
-              <div class="thumb text-center">
-                  <header class="thumb-header">
-                      <img class="round" src="{{ url_for('static',filename='img/avatar1.jpeg') }}" alt="Image Alternative text" title="Gamer Chick" />
-                  </header>
-                  <div class="gap-small"></div>
-                  <div class="thumb-caption">
-                      <h5 class="thumb-title">Xiaoran Lin</h5>
-                      <p class="text-muted mb-0">Developer</p>
+        <section class="second-section">
+          <div class="container">
+            <form id="strategy_selection_form" action = "" method="post" name="Strategy">
+              <input type="hidden" name="strategies" id="selected_strategies_val">
+              <div class="row">
+              <div class="col-md-3 col-sm-6 invest-strategy">
+                <div class="service-item">
+                  <div class="icon">
+                    <img src="../static/img/first-icon.png" alt="">
+                  </div>
+                  <h4>Quality</h4>
+                    <div style="margin: 10px 0px"></div>
+                    <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-checked-icon invisible"></i>
+                 </div>
+              </div>
+              <div class="col-md-3 col-sm-6 invest-strategy">
+                <div class="service-item">
+                  <div class="icon">
+                    <img src="../static/img/second-icon.png" alt="">
+                  </div>
+                  <h4>Growth</h4>
+                    <div style="margin: 10px 0px"></div>
+                    <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-checked-icon invisible"></i>
+                 </div>
+              </div>
+              <div class="col-md-3 col-sm-6 invest-strategy">
+                <div class="service-item">
+                  <div class="icon">
+                    <img src="../static/img/third-icon.png" alt="">
+                  </div>
+                  <h4>Index</h4>
+                    <div style="margin: 10px 0px"></div>
+                    <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-checked-icon invisible"></i>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 invest-strategy">
+                <div class="service-item">
+                  <div class="icon">
+                    <img src="../static/img/fourth-icon.png" alt="">
+                  </div>
+                  <h4>Ethical</h4>
+                    <div style="margin: 10px 0px"></div>
+                    <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-checked-icon invisible"></i>
+                </div>
+              </div>
+              <div class="col-xs-12 send-to-portfolio text-center" style="padding-top: 35px">
+                  <input type="text" name="amount" id="input_amount" style="width: 250px; height: 35px; border: solid 1px #415b90; border-radius: 3px;" placeholder=" Amount: " size="20">
+                  <div>
+                  <p id="selection_hint" style="color: #f05f40; padding: 10px 0px;">One or Two Strategies And above 5000 Amount</p>
+                  </div>
+                  <div id="submit_btn_container" class="primary-button" style="width: 127px;margin: 0 auto; padding-top: 50px; display: none">
+                    <a href="javascript:void(0)" style="color: white;background-color: #415b90" id="submit_strategy_selection">Visit gallery</a>
                   </div>
               </div>
+            </div>
+            </form>
           </div>
-          <div class="col-md-3">
-              <div class="thumb text-center">
-                  <header class="thumb-header">
-                      <img class="round" src="{{ url_for('static',filename='img/avatar2.jpg') }}" alt="Image Alternative text" title="Gamer Chick" />
-                  </header>
-                  <div class="gap-small"></div>
-                  <div class="thumb-caption">
-                      <h5 class="thumb-title">Ruifeng Sheng</h5>
-                      <p class="text-muted mb-0">Developer</p>
-                  </div>
+        </section>
+
+        <section class="third-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <div class="left-image col-md-4">
+                  <img src="../static/img/left-image.png" alt="">
+                </div>
+                <div class="right-text col-md-8">
+                  <h4><em>Integer suscipit</em><br>Nullam volutpat mi vel</h4>
+                  <p>Nulla tempor lectus at mauris bibendum porttitor. Aenean ultrices orci id nibh sodales, vel suscipit arcu vulputate. Pellentesque hendrerit diam quis leo dignissim, lacinia interdum nunc volutpat. Morbi lobortis mattis lectus, a dictum augue lobortis non. Fusce eu nulla sagittis, scelerisque eros fringilla, commodo dolor.</p>
+                </div>
               </div>
+            </div>
           </div>
-          <div class="col-md-3">
-              <div class="thumb text-center">
-                  <header class="thumb-header">
-                      <img class="round" src="{{ url_for('static',filename='img/avatar4.jpg') }}" alt="Image Alternative text" title="Gamer Chick" />
-                  </header>
-                  <div class="gap-small"></div>
-                  <div class="thumb-caption">
-                      <h5 class="thumb-title">Mutian Wang</h5>
-                      <p class="text-muted mb-0">Developer</p>
+        </section>
+
+        <section class="fourth-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-sm-6">
+                <div class="portfolio-item first-item">
+                  <div class="image">
+                    <a href="../static/img/01-big-item.jpg" data-lightbox="image-1"><img src="../static/img/first-item.jpg"></a>
                   </div>
-              </div>
-          </div>
-          <div class="col-md-3">
-              <div class="thumb text-center">
-                  <header class="thumb-header">
-                      <img class="round" src="{{ url_for('static',filename='img/avatar3.jpg') }}" alt="Image Alternative text" title="Gamer Chick" />
-                  </header>
-                  <div class="gap-small"></div>
-                  <div class="thumb-caption">
-                      <h5 class="thumb-title">Annan Wang</h5>
-                      <p class="text-muted mb-0">Developer</p>
+                  <div class="text">
+                    <span>Nature</span>
+                    <h4>Robotic Light</h4>
                   </div>
+                </div>
               </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="portfolio-item second-item">
+                  <div class="image">
+                    <a href="../static/img/02-big-item.jpg" data-lightbox="image-1"><img src="../static/img/second-item.jpg"></a>
+                  </div>
+                  <div class="text">
+                    <span>Architect</span>
+                    <h4>Rock Solid</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="portfolio-item third-item">
+                  <div class="image">
+                    <a href="../static/img/03-big-item.jpg" data-lightbox="image-1"><img src="../static/img/third-item.jpg"></a>
+                  </div>
+                  <div class="text">
+                    <span>Focus</span>
+                    <h4>Clean Design</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="send-to-portfolio">
+                  <span>Do you want to see more?</span>
+                  <div class="primary-button">
+                    <a href="javascript:void(0)" id="submit_strategy_selection">Visit gallery</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          
+        </section>
 
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
-            <hr class="my-4">
-            <p class="mb-5">Ready to start your investment with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+        <section class="fivth-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1"> 
+                <div class="left-text col-md-8">
+                  <h4><em>Aliquam efficitur</em><br>augue et libero vulputate feugiat</h4>
+                  <p>Mauris eget orci porta, aliquam neque sit amet, porttitor dui. Donec efficitur vehicula justo quis varius. Vivamus pharetra lorem eget turpis ornare tempus. Vivamus ac sodales lectus. Morbi rhoncus feugiat neque ultrices rhoncus. Maecenas ultrices, nisl pellentesque hendrerit dignissim, ante purus hendrerit urna, eu tristique est massa quis risus.</p>
+                </div>
+                <div class="right-image col-md-4">
+                  <img src="../static/img/right-image.png" alt="">
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-            <p>666-101-9999</p>
+        </section>
+
+        <section class="sixth-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <form id="contact" action="" method="post">
+                    <div class="col-md-6">
+                      <fieldset>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                      </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                      <fieldset>
+                        <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required="">
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="btn">Send Message</button>
+                      </fieldset>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="right-info">
+                  <ul>
+                    <li><a href="#"><i class="fa fa-envelope"></i>hello@company.com</a></li>
+                    <li><a href="#"><i class="fa fa-phone"></i>050 060 0780 / 050 060 0110</a></li>
+                    <li><a href="#"><i class="fa fa-map-marker"></i>1186 New Street, ST 10990</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
-            <p>
-              <a href="mailto:your-email@your-domain.com">666@crazyinvestment.com</a>
-            </p>
+        </section>
+
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <ul>
+                  <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                </ul>
+                <p>Copyright &copy; 2017 Company Name 
+                        
+                        | Design: <a href="https://www.facebook.com/tooplate" target="_parent">Tooplate</a></p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </footer>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{{ url_for('static',filename='vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-    <!-- Plugin JavaScript -->
-    <script src="{{ url_for('static',filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-    <script src="{{ url_for('static',filename='vendor/scrollreveal/scrollreveal.min.js') }}"></script>
-    <script src="{{ url_for('static',filename='vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+        <script src="../static/js/vendor/bootstrap.min.js"></script>
 
-    <!-- Custom scripts for this template -->
-    <script src="{{ url_for('static',filename='js/creative.js') }}"></script>
+        <script src="../static/js/plugins.js"></script>
+        <script src="../static/js/main.js"></script>
 
-  </body>
-
+    </body>
 </html>
