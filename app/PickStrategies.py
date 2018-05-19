@@ -6,7 +6,7 @@ import urllib2
 import csv
 
 
-API_KEY = '2IGI5KM2OW30BC4P'
+API_KEY = 'DSJ9W3ZS7A6RWBJC'
 API_BASE_CURRENT = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&apikey={}&symbol={}&interval=1min' \
                    '&datatype=csv'
 API_BASE_DAILY = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&apikey={}&symbol={}&datatype=csv'
