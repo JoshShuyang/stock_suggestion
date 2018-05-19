@@ -77,6 +77,7 @@ p {
 }
 
 
+
 /* ======================
 ---- SECOND SECTION------
 =======================*/
@@ -99,6 +100,19 @@ p {
 	color: #415b90;
 	margin-top: 25px;
 	margin-bottom: 15px;
+}
+
+.second-section .strategy-option {
+	padding-top: 25px;
+	cursor: pointer;
+	-webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+  	-o-transition: background-color 2s ease-out;
+  	transition: background-color 2s ease-out;
+}
+
+.second-section .strategy-option:hover{
+	background-color: #b5b5b5;
 }
 
 
@@ -144,6 +158,11 @@ p {
 	margin-top: 15px;
 }
 
+.third-section ol li {
+	color: #fff;
+	margin-top: 15px;
+}
+
 
 /* ======================
 ---- FOURTH SECTION -----
@@ -177,6 +196,10 @@ p {
 
 .fourth-section .third-item .text {
 	background-color: #dedede;
+}
+
+.fourth-section .fourth-item .text {
+	background-color: #cccaca;
 }
 
 .fourth-section .portfolio-item .text {

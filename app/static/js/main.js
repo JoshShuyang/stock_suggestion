@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
       toogleHintAndSubmitBtn();
     });
 
-    $(document).on("click", ".invest-strategy", function(){
+    $(document).on("click", ".strategy-option", function(){
         // toggle icon visibility
         $(this).find("i.strategy-checked-icon").toggleClass("invisible");
 
