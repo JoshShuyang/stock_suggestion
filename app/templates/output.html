@@ -1,0 +1,265 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--
+
+Template 2091 Ziggy
+
+http://www.tooplate.com/view/2091-ziggy
+
+-->
+        <title>Ziggy HTML Template - Portfolio Gallery</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../static/css/fontAwesome.css">
+        <link rel="stylesheet" href="../static/css/tooplate-style.css">
+
+        <script src="../static/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        
+
+        <section class="first-gallery-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="text-content">
+                  <h2>Gallery</h2>
+                  <div class="line-dec"></div>
+                  <span>All about our work and play</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="send-to-home">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="back-to-home">
+                  <span>Duis facilisis neque ut letius dictum. Phasellus et ultricies eros. Praesent commodo augue eget finibus feugiat.</span>
+                  <div class="primary-button">
+                    <a href="invest">Go to homepage</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+  
+        <div class="content-wrapper">
+            <div class="inner-container container">
+                <div class="projects-holder-3">
+                    <div class="filter-categories">
+                        <ul class="project-filter">
+                            <li class="filter" data-filter="all"><span>All</span></li>
+                            <li class="filter" data-filter="portfolio"><span>Portfolio</span></li>
+                            <li class="filter" data-filter="ratio"><span>Ratio</span></li>
+                            <li class="filter" data-filter="trend"><span>Trend</span></li>
+                        </ul>
+                    </div>
+                    <div class="projects-holder">
+                        <div class="row">
+                            <div class="col-xs-12 project-item mix portfolio">
+                              <section id="Portfolio">
+                                  <div class="container">
+                                    <div class="row">
+                                      <div class="col-xs-12">
+                                        <h2>Portfolio</h2>
+                                        <hr>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="container">
+                                    <table class="table table-striped" id="portfolioTable">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align: center">Symbol</th>
+                                                <th style="text-align: center">Company</th>
+                                                <th style="text-align: center">Recent Price</th>
+                                                <th style="text-align: center">Ratio</th>
+                                                <th style="text-align: center">Value</th>
+                                                <th style="text-align: center">Market</th>
+                                            </tr>
+                                        </thead>
+                                        {% for stock in stockInfo %}
+                                        <tr>
+                                            <td>{{ stockInfo[stock].stock_short }}</td>
+                                            <td>{{ stockInfo[stock].stock_company_name }}</td>
+                                            <td>{{ stockInfo[stock].stock_latest_price }}</td>
+                                            <td>{{ stockInfo[stock].holding_ratio }}</td>
+                                            <td>{{ stockInfo[stock].holding_value }}</td>
+                                            <td>{{ stockInfo[stock].stock_exchange }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </table>
+                                  </div>
+                                </section>
+                            </div>
+                            <div class="col-xs-12 project-item mix responsive ratio">
+                              <section id="ratio" class="">
+                                  <div class="container text-center">
+                                    <h2 class="section-heading">Dividing Ratio</h2>
+                                    <hr class="my-4">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div id="piechart" style=" width: 800px; height: 800px; left: calc(50% + 20px); position: relative;"></div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </section>
+                            </div>
+                            <div class="col-xs-12 project-item mix trend">
+                              <section id="trend" class="bg-dark text-white">
+                                  <table class="table" id="histPortfolio" align="center" style="display: none">
+                                      {% for stockHist in stockHistInfo %}
+                                      <tr>
+                                          <td>{{ stockHist.date }}</td>
+                                          <td>{{ stockHist.value }}</td>
+                                      </tr>
+                                      {% endfor %}
+                                </table>
+                                  <div class="container text-center">
+                                    <h2 class="section-heading">Trend</h2>
+                                    <hr class="my-4">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div id="curve_chart" style="width: 1000px; height: 400px; left: calc(10% + 20px); position: relative;"></div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <ul>
+                  <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                </ul>
+                <p>Copyright &copy; 2017 Company Name 
+                        
+                        | Design: <a href="https://www.facebook.com/tooplate" target="_parent">Tooplate</a></p>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="../static/js/vendor/bootstrap.min.js"></script>
+
+        <script src="../static/js/plugins.js"></script>
+        <script src="../static/js/main.js"></script>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages': ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+            let tr = document.getElementById('portfolioTable').rows;
+            let pieDatas = [];
+            let header = tr[0].cells;
+            let headers = [];
+            headers.push(header[1].innerHTML);
+            headers.push(header[3].innerHTML);
+            pieDatas.push(headers);
+            for (let i = 0; i < tr.length; i++) {
+                let pieData = [];
+                let td = tr[i].cells;
+                pieData.push(td[1].innerHTML);
+                let num = parseFloat(td[3].innerHTML) * 100;
+                num = Math.round(num);
+                pieData.push(num);
+                pieDatas.push(pieData);
+            }
+            function drawChart() {
+                let data = google.visualization.arrayToDataTable(pieDatas);
+                let options = {
+                    title: 'Dividing Ratio',
+                    pieHole: 0.4,
+                    slices: {
+                        0: { color: 'yellow' },
+                        1: { color: 'red' },
+                        2: { color: 'blue'},
+                      }
+                };
+                let chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                chart.draw(data, options);
+            }
+
+            google.charts.load('current', {'packages': ['corechart']});
+            google.charts.setOnLoadCallback(drawLine);
+            let history_tr = document.getElementById('histPortfolio').rows;
+            let lineDatas = [];
+            lineDatas.push(['Date', 'Amount']);
+            let historyLen = history_tr.length;
+            for (let i = historyLen-1; i >= 0; i--) {
+                let lineData = [];
+                td = history_tr[i].cells;
+                lineData.push(td[0].innerHTML);
+                let num = parseFloat(td[1].innerHTML);
+                lineData.push(num);
+                lineDatas.push(lineData);
+                console.log(lineData);
+            }
+            function drawLine() {
+                 let data = google.visualization.arrayToDataTable(lineDatas);
+                let options = {
+                  backgroundColor: "#212529",
+                  legend: {
+                    position: 'top',
+                    textStyle: {
+                      color: "#eeeeee"
+                    }
+                  },
+                  colors: ['#f05f40'],
+                  hAxis: {
+                    title: 'Date',
+                    textStyle: {
+                     color: '#eeeeee'
+                    },
+                    titleTextStyle: {
+                      color: '#eeeeee'
+                    }
+                  },
+                  vAxis: {
+                    title: 'Amount',
+                    textStyle: {
+                     color: '#eeeeee'
+                    },
+                    titleTextStyle: {
+                      color: '#eeeeee'
+                    }
+                  }
+                };
+                let chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+                chart.draw(data, options);
+              }
+        </script>
+    </body>
+</html>

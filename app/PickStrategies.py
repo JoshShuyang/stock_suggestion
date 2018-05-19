@@ -79,7 +79,9 @@ stock_info = {
         'Index': ('LNDC', 'LWAY', 'MDLZ', 'RAVE', 'RIBT'),
         'Quality': ('RYAAY', 'SABR', 'TST', 'EDBI', 'AFMD')
     }
-#get the stock list and according percentage for one selected strategy, and the allotment is divided equally
+
+
+# get the stock list and according percentage for one selected strategy, and the allotment is divided equally
 def get_stock_list(strategy, strategy_ratio):
     #define the stocks for each strategy
     stocks = stock_info[strategy]
@@ -97,7 +99,7 @@ def get_stock_list(strategy, strategy_ratio):
     return stock_percent_list
 
 
-#investment for each stock info,the value is  five days ago(work time, not including weekends)
+# investment for each stock info,the value is  five days ago(work time, not including weekends)
 def get_strategy_stock_info(stock_list, investment):
     stock_strategy_invest_info = {}
     for stock_short in stock_list:
@@ -110,7 +112,7 @@ def get_strategy_stock_info(stock_list, investment):
     return stock_strategy_invest_info
 
 
-#get the portfolio total value of the past five days--dict
+# get the portfolio total value of the past five days--dict
 def get_historical_strategy_stock_value(stock_list, investment):
     stock_historical_values = defaultdict(float)
     ordered_date = []
@@ -132,8 +134,9 @@ def get_historical_strategy_stock_value(stock_list, investment):
         result.append(dict_json)
     return result
 
+
 def get_share_lastday(stock_short):
-    API_KEY = '2IGI5KM2OW30BC4P'
+    API_KEY = 'DSJ9W3ZS7A6RWBJC'
     API_BASE_DAILY = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&apikey={}&symbol={}&datatype=csv'
     stock_short = stock_short.upper()
     response = urllib2.urlopen(API_BASE_DAILY.format(API_KEY, stock_short))
@@ -142,6 +145,7 @@ def get_share_lastday(stock_short):
     next(reader, None)  # skip the header
     ts_data = [row for row in reader]
     return ts_data[:1]  # return last data
+
 
 def get_change(data):
     open = float(data[0][1])

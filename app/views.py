@@ -10,21 +10,20 @@ def invest():
     if request.method =='POST':
         amount = float(request.form['amount'])
         if amount < 5000:
-            return render_template('error.html')
+            return render_template('404.html')
         pprint(amount)
         choices = request.form['strategies']
         pprint(choices)
         choices = json.loads(choices)
         if len(choices) <= 0 or len(choices) > 2:
-            return render_template('error.html')
+            return render_template('404.html')
         
         # testArray = ['Ethical']
         stocklist = get_stock_list_all(choices)
-        details = get_strategy_stock_info(stocklist, amount)
+        stockInfo = get_strategy_stock_info(stocklist, amount)
         pprint(stocklist)
-        history = get_historical_strategy_stock_value(stocklist, amount)
-        pprint(history)
-        return render_template("result.html", details=details, history=history)
+        stockHistInfo = get_historical_strategy_stock_value(stocklist, amount)
+        return render_template("output.html", stockInfo=stockInfo, stockHistInfo=stockHistInfo)
         # try:
         #     amount = float(request.form['amount'])
         #     if amount < 5000:
