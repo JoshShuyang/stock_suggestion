@@ -1,4 +1,4 @@
-# CMPE285_final_project
+# CMPE285 Final Project
 ## Stock Portfolio Suggestion Engine
 
 The project requires python2.7 environment.
