@@ -11,70 +11,59 @@ jQuery(document).ready(function($) {
 
     let strategyChoices = [];
 
-    $(document).on("keyup", "#stack_value", function(){
-      toogleHintAndSubmitBtn();
+    //click event for each strategy
+    $(document).on("click", ".strategy-option", function(){
+        $(this).find("i.strategy-selected").toggleClass("invisible");
+        let strategy = $(this).find("h4").text();
+        let strategyIndex = strategyChoices.indexOf(strategy);
+
+        if(strategyIndex < 0)
+            // add new strategy
+          strategyChoices.push(strategy);
+        else
+            // uncheck a existing strategy
+          strategyChoices.splice(strategyIndex, 1);
+
+        suggestionBtnToggle();
     });
 
-    $(document).on("click", ".strategy-option", function(){
-        // toggle icon visibility
-        $(this).find("i.strategy-checked-icon").toggleClass("invisible");
+    //key up event after finishing input stock value
+    $(document).on("keyup", "#stack_value", function(){
+      suggestionBtnToggle();
+    });
 
-        // update selected strategies
-        let key = $(this).find("h4").text();
-        let keyIndex = strategyChoices.indexOf(key);
-        if(keyIndex < 0)
+    //click get suggestion button event
+    $(document).on("click", "#get_suggestion", function(){
+        let $form = $("#suggestion_form");
+        $form.find("#chosen_strategies").val(JSON.stringify(strategyChoices));
+        $form.submit();
+    });
+
+
+    function suggestionBtnToggle()
+    {
+        let $reminder = $("#reminder");
+        let $suggestion_btn = $("#suggestion_btn");
+
+        if (inputValidation())
         {
-          strategyChoices.push(key);
+          $reminder.hide();
+          $suggestion_btn.show();
         }
         else
         {
-          strategyChoices.splice(keyIndex, 1);
+          $reminder.show();
+          $suggestion_btn.hide();
         }
-
-        toogleHintAndSubmitBtn();
-
-        console.log(strategyChoices);
-    });
-
-    $(document).on("click", "#get_suggestion", function(){
-
-        let $form = $("#strategy_selection_form");
-        $form.find("#selected_strategies_val").val(JSON.stringify(strategyChoices));
-        $form.submit();
-
-    });
-
-
- function toogleHintAndSubmitBtn()
-  {
-    let $selection_hint = $("#selection_hint");
-    let $suggestion_btn_container = $("#suggestion_btn_container");
-    if(validStratrgiesInput())
-    {
-      $selection_hint.hide();
-      $suggestion_btn_container.show();
     }
-    else
+    
+    function inputValidation()
     {
-      $selection_hint.show();
-      $suggestion_btn_container.hide();
-    }
-  }
+        let stackValue = $("#stack_value").val();
 
-  function validStratrgiesInput()
-  {
-    let stackValue = $("#stack_value").val();
-    if(!stackValue || stackValue.length < 1)
-    {
-      return false;
-    }
-    if(strategyChoices.length > 2
-      || strategyChoices.length <= 0
-      || parseFloat(stackValue) < 5000)
-    {
-      return false;
-    }
+        if (isNaN(parseInt(stackValue)) || isNaN(stackValue))
+          return false;
 
-    return true;
-  }
+        return !(strategyChoices.length > 2 || strategyChoices.length <= 0 || parseInt(stackValue) < 5000);
+    }
 });

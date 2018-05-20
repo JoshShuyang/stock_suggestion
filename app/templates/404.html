@@ -1,7 +1,7 @@
 <html lang="en">
     <head>
     <meta charset="utf-8">
-    <title>Page Not Found :(</title>
+    <title>Something is wrong :(</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     </head>
@@ -140,6 +140,10 @@
             background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTYuNjY4IDk1LjY2MSIgPgo8Zz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik00OS40NjMgOC4yMmwtMjYuMDkgNDYuOTY0SDYyLjc1djM3LjVoLTEyLjV2LTI1SDIuMTI3bDM2LjQxLTY1LjUzNkw0OS40NjMgOC4yMnogTTEzMS41IDQ4LjkgYzAgMTcuMjYxLTEzLjk4OSAzMS4yNS0zMS4yNSAzMS4yNWMtMTcuMjYyIDAtMzEuMjUtMTMuOTktMzEuMjUtMzEuMjVjMC0xNy4yNTggMTMuOTg5LTMxLjI1IDMxLjI1LTMxLjI1IEMxMTcuNTExIDE3LjcgMTMxLjUgMzEuNyAxMzEuNSA0OC45MzR6IE0xMTkgNDguOTMzYzAtMTAuMzQtOC40MS0xOC43NS0xOC43NS0xOC43NWMtMTAuMzQgMC0xOC43NTEgOC40MS0xOC43NTEgMTguOCBjMCAxMC4zIDguNCAxOC44IDE4LjggMTguNzUxQzExMC41OSA2Ny43IDExOSA1OS4zIDExOSA0OC45MzN6IE0xNTQuNjIgNTUuMTg0SDE5NHYzNy41aC0xMi41di0yNWgtNDguMTIxIGwzNi40MDgtNjUuNTM2bDEwLjkyNiA2LjA3MkwxNTQuNjIgNTUuMTg0eiIvPgo8L2c+Cjwvc3ZnPg==) no-repeat center center;
             }
 
+        .value-error {
+            padding: 25px 10px;
+        }
+
 
 
 
@@ -209,11 +213,11 @@
 
     <div class="container">
 
-        <div class="four-oh-four"><h1>404 Error</h1></div>
+        <div class="value-error"><h1>Stock Value Error</h1></div>
 
         <div class="warning">
-            <h2>"All those moments will be lost in time, like tears in rain."</h2>
-            <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+            <div style="margin-bottom: 20px;color: bisque; font-size: 14px">"All those moments will be lost in time, like tears in rain."</div>
+            <p style="font-size: 20px; margin: 30px 5px;">{{ errorMsg }}</p>
             <a href="invest">Please go back to the previous page</a>
         </div>
 

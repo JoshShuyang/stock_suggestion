@@ -41,8 +41,8 @@
 
         <section class="second-section">
           <div class="container">
-            <form id="strategy_selection_form" action = "" method="post" name="Strategy">
-              <input type="hidden" name="strategies" id="selected_strategies_val">
+            <form id="suggestion_form" action = "" method="post" name="Strategy">
+              <input type="hidden" name="seletedStrategies" id="chosen_strategies">
               <div class="row">
               <div class="col-md-3 col-sm-6 strategy-option">
                 <div class="service-item">
@@ -51,7 +51,7 @@
                   </div>
                   <h4>Quality</h4>
                     <div style="margin: 10px 0px"></div>
-                    <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-checked-icon invisible"></i>
+                    <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-selected invisible"></i>
                  </div>
               </div>
               <div class="col-md-3 col-sm-6 strategy-option">
@@ -61,7 +61,7 @@
                   </div>
                   <h4>Growth</h4>
                     <div style="margin: 10px 0px"></div>
-                    <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-checked-icon invisible"></i>
+                    <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-selected invisible"></i>
                  </div>
               </div>
               <div class="col-md-3 col-sm-6 strategy-option">
@@ -71,7 +71,7 @@
                   </div>
                   <h4>Index</h4>
                     <div style="margin: 10px 0px"></div>
-                    <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-checked-icon invisible"></i>
+                    <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-selected invisible"></i>
                 </div>
               </div>
               <div class="col-md-3 col-sm-6 strategy-option">
@@ -81,7 +81,7 @@
                   </div>
                   <h4>Ethical</h4>
                     <div style="margin: 10px 0px"></div>
-                    <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-checked-icon invisible"></i>
+                    <i class="fa fa-2x fa-check-circle-o text-primary mb-3 sr-icons strategy-selected invisible"></i>
                 </div>
               </div>
               <div class="col-xs-12 send-to-portfolio text-center" style="padding-top: 35px">
@@ -95,10 +95,11 @@
                   </div>
 
                   <div>
-                    <p id="selection_hint" style="font-size: 14px; font-weight: 600;color: #415b90; padding: 10px 0px;">[choose 1 or 2 strategies and input above 5000 stock value]</p>
+                    <p id="reminder" style="font-size: 14px; font-weight: 600;color: #415b90; padding: 10px 0px;">
+                        [choose 1 or 2 strategies and input above 5000 stock value]</p>
                   </div>
 
-                  <div id="suggestion_btn_container" class="primary-button" style="width:200px; height:50px; line-height: 30px; margin: 0 auto; padding-top: 50px; display: none">
+                  <div id="suggestion_btn" class="primary-button" style="width:200px; height:50px; line-height: 30px; margin: 0 auto; padding-top: 50px; display: none">
                     <a href="javascript:void(0)" style="color: white;background-color: #415b90" id="get_suggestion">Get Suggestion</a>
                   </div>
               </div>
