@@ -62,7 +62,7 @@ def get_current_stock_info(stock_short):
     return stock_current_info
 
 
-# get all the stock list and according percentage for the selected strategies
+# get all the stocks and  percentages for the selected strategies
 def get_stock_list_all(strategy_list):
     stock_percent_list={}
     if(len(strategy_list)==1):
@@ -74,10 +74,10 @@ def get_stock_list_all(strategy_list):
 
 
 stock_info = {
-        'Ethical': ('CECE', 'CSOD', 'PESI', 'POPE', 'SMED'),
-        'Growth': ('TSLA', 'AVAV', 'TATT', 'SIFY', 'KLXI'),
+        'Ethical': ('GILD', 'GOOGL', 'NOV', 'PX', 'QCOM'),
+        'Growth': ('BIIB', 'AKRX', 'PSXP', 'IPGP', 'NFLX'),
         'Index': ('LNDC', 'LWAY', 'MDLZ', 'RAVE', 'RIBT'),
-        'Quality': ('RYAAY', 'SABR', 'TST', 'EDBI', 'AFMD')
+        'Quality': ('JNJ', 'KO', 'REGN', 'PEP', 'NKE'),
     }
 
 
