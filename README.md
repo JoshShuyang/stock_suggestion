@@ -1,6 +1,8 @@
 # CMPE285_final_project
 ## Stock Portfolio Suggestion Engine
 
+The project requires python2.7 environment.
+
 The project requires a handful of python2.7 packages. Install them using:
 
 pip install -r requirements.txt
