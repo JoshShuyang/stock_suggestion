@@ -1,4 +1,4 @@
-from app.PickStrategies import get_stock_list_all, get_strategy_stock_info, get_historical_strategy_stock_value
+from app.PickStrategies import get_all, get_strategy, get_historical_strategy
 from flask import render_template, flash, redirect, request
 from app import app
 from pprint import pprint
@@ -22,10 +22,10 @@ def invest():
         if len(choices) <= 0 or len(choices) > 2:
             return render_template('404.html')
 
-        stocklist = get_stock_list_all(choices)
-        stockInfo = get_strategy_stock_info(stocklist, amount)
+        stocklist = get_all(choices)
+        stockInfo = get_strategy(stocklist, amount)
         #pprint(stocklist)
-        stockHistInfo = get_historical_strategy_stock_value(stocklist, amount)
+        stockHistInfo = get_historical_strategy(stocklist, amount)
         return render_template("output.html", stockInfo=stockInfo, stockHistInfo=stockHistInfo)
 
 

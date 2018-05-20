@@ -13,7 +13,7 @@ API_BASE_DAILY = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&a
 
 symbol_map = {}
 
-def load_symbol_map(fname):
+def load_symbols(fname):
     with open(fname, 'rb') as fp:
         reader = csv.reader(fp)
         stock_exchange = fname.split('.')[0]
@@ -22,11 +22,11 @@ def load_symbol_map(fname):
             symbol_map[row[0]] = [row[1], stock_exchange]
 
 def prepare_symbols():
-    load_symbol_map('nasdaq.csv')
-    load_symbol_map('nyse.csv')
-    load_symbol_map('amex.csv')
+    load_symbols('nasdaq.csv')
+    load_symbols('nyse.csv')
+    load_symbols('amex.csv')
 
-def get_historical_info(stock_short):
+def get_historical(stock_short):
     stock_short = stock_short.upper()
     response = urllib2.urlopen(API_BASE_DAILY.format(API_KEY, stock_short))
 
@@ -36,7 +36,7 @@ def get_historical_info(stock_short):
     return ts_data[:7]  # return last 7days' data
 
 # get the current info of the latest stock info from alphavantage
-def get_current_stock_info(stock_short):
+def get_current(stock_short):
     stock_short = stock_short.upper()
     stock_share = urllib2.urlopen(API_BASE_CURRENT.format(API_KEY, stock_short))
 
@@ -62,8 +62,8 @@ def get_current_stock_info(stock_short):
     return stock_current_info
 
 
-# get all the stocks and  percentages for the selected strategies
-def get_stock_list_all(strategy_list):
+# get all the stocks and percentages for the selected strategies
+def get_all(strategy_list):
     stock_percent_list={}
     if(len(strategy_list)==1):
         stock_percent_list=get_stock_list(strategy_list[0], 1)
@@ -100,10 +100,10 @@ def get_stock_list(strategy, strategy_ratio):
 
 
 # investment for each stock info,the value is  five days ago(work time, not including weekends)
-def get_strategy_stock_info(stock_list, investment):
+def get_strategy(stock_list, investment):
     stock_strategy_invest_info = {}
     for stock_short in stock_list:
-        stock_current_info = get_current_stock_info(stock_short) #get every current stock info
+        stock_current_info = get_current(stock_short) #get every current stock info
         holding_ratio = stock_list[stock_short]
         stock_current_info['holding_ratio'] = float("{0:.4f}".format(holding_ratio))
         stock_current_info['holding_value'] = float("{0:.2f}".format(holding_ratio * investment))
@@ -113,12 +113,12 @@ def get_strategy_stock_info(stock_list, investment):
 
 
 # get the portfolio total value of the past five days--dict
-def get_historical_strategy_stock_value(stock_list, investment):
+def get_historical_strategy(stock_list, investment):
     stock_historical_values = defaultdict(float)
     ordered_date = []
     result = []
     for stock_short in stock_list:
-        historical_info = get_historical_info(stock_short)
+        historical_info = get_historical(stock_short)
         if not ordered_date:
             ordered_date = [itm[0] for itm in historical_info]
         holding_ratio = stock_list[stock_short]
