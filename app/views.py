@@ -5,7 +5,7 @@ from pprint import pprint
 import json
 
 
-@app.route('/invest', methods=['GET', 'POST'])
+@app.route('/stock_suggestion', methods=['GET', 'POST'])
 def invest():
     if request.method =='POST':
         try:
