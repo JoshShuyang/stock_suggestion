@@ -174,7 +174,6 @@
             //hole pie chart for dividing raito
             google.charts.load('current', {'packages': ['corechart']});
             google.charts.setOnLoadCallback(drawPieChart);
-
             let tr = document.getElementById('portfolioTable').rows;
             let pieDatas = [];
             let header = tr[0].cells;
@@ -182,7 +181,6 @@
             headers.push(header[1].innerHTML);
             headers.push(header[3].innerHTML);
             pieDatas.push(headers);
-
             for (let i = 0; i < tr.length; i++) {
                 let pieData = [];
                 let td = tr[i].cells;
@@ -192,7 +190,6 @@
                 pieData.push(num);
                 pieDatas.push(pieData);
             }
-
             function drawPieChart() {
                 let data = google.visualization.arrayToDataTable(pieDatas);
                 let options = {
@@ -207,11 +204,9 @@
                 let chart = new google.visualization.PieChart(document.getElementById('piechart'));
                 chart.draw(data, options);
             }
-
             //weekly trend chart
             google.charts.load('current', {'packages': ['corechart']});
             google.charts.setOnLoadCallback(drawWeeklyTrend);
-
             let history_tr = document.getElementById('histPortfolio').rows;
             let lineDatas = [];
             lineDatas.push(['Date', 'Value']);
@@ -224,7 +219,6 @@
                 lineData.push(num);
                 lineDatas.push(lineData);
             }
-
             function drawWeeklyTrend() {
                 let data = google.visualization.arrayToDataTable(lineDatas);
                 let options = {

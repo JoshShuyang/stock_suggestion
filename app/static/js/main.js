@@ -1,8 +1,8 @@
 jQuery(document).ready(function($) {
 
-	'use strict';
+    'use strict';
 
-	/************** Mixitup (Filter Projects) *********************/
+    /************** Mixitup (Filter Projects) *********************/
     $('.projects-holder').mixitup({
         effects: ['fade','grayscale'],
         easing: 'snap',
