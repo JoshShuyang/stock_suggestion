@@ -11,11 +11,6 @@ jQuery(document).ready(function($) {
 
     let strategyChoices = [];
 
-    //key up event after finishing input stock value
-    $(document).on("keyup", "#stack_value", function(){
-      suggestionBtnToggle();
-    });
-
     //click event for each strategy
     $(document).on("click", ".strategy-option", function(){
         $(this).find("i.strategy-selected").toggleClass("invisible");
@@ -32,12 +27,16 @@ jQuery(document).ready(function($) {
         suggestionBtnToggle();
     });
 
+    //key up event after finishing input stock value
+    $(document).on("keyup", "#stack_value", function(){
+      suggestionBtnToggle();
+    });
+
+    //click get suggestion button event
     $(document).on("click", "#get_suggestion", function(){
-
-        let $form = $("#strategy_selection_form");
-        $form.find("#selected_strategies_val").val(JSON.stringify(strategyChoices));
+        let $form = $("#suggestion_form");
+        $form.find("#chosen_strategies").val(JSON.stringify(strategyChoices));
         $form.submit();
-
     });
 
 
@@ -65,8 +64,6 @@ jQuery(document).ready(function($) {
         if (isNaN(parseInt(stackValue)) || isNaN(stackValue))
           return false;
 
-        return !(strategyChoices.length > 2
-          || strategyChoices.length <= 0
-          || parseInt(stackValue) < 5000);
+        return !(strategyChoices.length > 2 || strategyChoices.length <= 0 || parseInt(stackValue) < 5000);
     }
 });

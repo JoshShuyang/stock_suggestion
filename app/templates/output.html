@@ -132,7 +132,7 @@
                                     <hr class="my-4">
                                     <div class="row">
                                         <div class="col-md-5">
-                                            <div id="trend_chart" style="width: 1000px; height: 400px; left: 15%; position: relative;"></div>
+                                            <div id="weekly_trend_chart" style="width: 1000px; height: 400px; left: 15%; position: relative;"></div>
                                         </div>
                                     </div>
                                   </div>
@@ -171,8 +171,10 @@
 
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
+            //hole pie chart for dividing raito
             google.charts.load('current', {'packages': ['corechart']});
-            google.charts.setOnLoadCallback(drawChart);
+            google.charts.setOnLoadCallback(drawPieChart);
+
             let tr = document.getElementById('portfolioTable').rows;
             let pieDatas = [];
             let header = tr[0].cells;
@@ -180,6 +182,7 @@
             headers.push(header[1].innerHTML);
             headers.push(header[3].innerHTML);
             pieDatas.push(headers);
+
             for (let i = 0; i < tr.length; i++) {
                 let pieData = [];
                 let td = tr[i].cells;
@@ -189,7 +192,8 @@
                 pieData.push(num);
                 pieDatas.push(pieData);
             }
-            function drawChart() {
+
+            function drawPieChart() {
                 let data = google.visualization.arrayToDataTable(pieDatas);
                 let options = {
                     title: 'Dividing Ratio',
@@ -204,8 +208,10 @@
                 chart.draw(data, options);
             }
 
+            //weekly trend chart
             google.charts.load('current', {'packages': ['corechart']});
-            google.charts.setOnLoadCallback(drawLine);
+            google.charts.setOnLoadCallback(drawWeeklyTrend);
+
             let history_tr = document.getElementById('histPortfolio').rows;
             let lineDatas = [];
             lineDatas.push(['Date', 'Value']);
@@ -219,8 +225,9 @@
                 lineDatas.push(lineData);
                 console.log(lineData);
             }
-            function drawLine() {
-                 let data = google.visualization.arrayToDataTable(lineDatas);
+
+            function drawWeeklyTrend() {
+                let data = google.visualization.arrayToDataTable(lineDatas);
                 let options = {
                   legend: {
                     position: 'top',
@@ -248,7 +255,7 @@
                     }
                   }
                 };
-                let chart = new google.visualization.LineChart(document.getElementById('trend_chart'));
+                let chart = new google.visualization.LineChart(document.getElementById('weekly_trend_chart'));
                 chart.draw(data, options);
               }
         </script>
