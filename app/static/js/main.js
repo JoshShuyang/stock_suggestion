@@ -11,29 +11,25 @@ jQuery(document).ready(function($) {
 
     let strategyChoices = [];
 
+    //key up event after finishing input stock value
     $(document).on("keyup", "#stack_value", function(){
-      toogleHintAndSubmitBtn();
+      suggestionBtnToggle();
     });
 
+    //click event for each strategy
     $(document).on("click", ".strategy-option", function(){
-        // toggle icon visibility
-        $(this).find("i.strategy-checked-icon").toggleClass("invisible");
+        $(this).find("i.strategy-selected").toggleClass("invisible");
+        let strategy = $(this).find("h4").text();
+        let strategyIndex = strategyChoices.indexOf(strategy);
 
-        // update selected strategies
-        let key = $(this).find("h4").text();
-        let keyIndex = strategyChoices.indexOf(key);
-        if(keyIndex < 0)
-        {
-          strategyChoices.push(key);
-        }
+        if(strategyIndex < 0)
+            // add new strategy
+          strategyChoices.push(strategy);
         else
-        {
-          strategyChoices.splice(keyIndex, 1);
-        }
+            // uncheck a existing strategy
+          strategyChoices.splice(strategyIndex, 1);
 
-        toogleHintAndSubmitBtn();
-
-        console.log(strategyChoices);
+        suggestionBtnToggle();
     });
 
     $(document).on("click", "#get_suggestion", function(){
@@ -45,36 +41,32 @@ jQuery(document).ready(function($) {
     });
 
 
- function toogleHintAndSubmitBtn()
-  {
-    let $selection_hint = $("#selection_hint");
-    let $suggestion_btn_container = $("#suggestion_btn_container");
-    if(validStratrgiesInput())
+    function suggestionBtnToggle()
     {
-      $selection_hint.hide();
-      $suggestion_btn_container.show();
-    }
-    else
-    {
-      $selection_hint.show();
-      $suggestion_btn_container.hide();
-    }
-  }
+        let $reminder = $("#reminder");
+        let $suggestion_btn = $("#suggestion_btn");
 
-  function validStratrgiesInput()
-  {
-    let stackValue = $("#stack_value").val();
-    if(!stackValue || stackValue.length < 1)
-    {
-      return false;
+        if (inputValidation())
+        {
+          $reminder.hide();
+          $suggestion_btn.show();
+        }
+        else
+        {
+          $reminder.show();
+          $suggestion_btn.hide();
+        }
     }
-    if(strategyChoices.length > 2
-      || strategyChoices.length <= 0
-      || parseFloat(stackValue) < 5000)
+    
+    function inputValidation()
     {
-      return false;
-    }
+        let stackValue = $("#stack_value").val();
 
-    return true;
-  }
+        if (isNaN(parseInt(stackValue)) || isNaN(stackValue))
+          return false;
+
+        return !(strategyChoices.length > 2
+          || strategyChoices.length <= 0
+          || parseInt(stackValue) < 5000);
+    }
 });

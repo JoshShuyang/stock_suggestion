@@ -8,9 +8,13 @@ import json
 @app.route('/invest', methods=['GET', 'POST'])
 def invest():
     if request.method =='POST':
-        amount = float(request.form['amount'])
+        try:
+            amount = float(request.form['amount'])
+        except ValueError:
+            return render_template('404.html', errorMsg="Invalid input stock value",)
+
         if amount < 5000:
-            return render_template('404.html')
+            return render_template('404.html', errorMsg="Please input stock value above 5000")
         pprint(amount)
         choices = request.form['strategies']
         pprint(choices)
