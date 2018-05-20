@@ -16,7 +16,7 @@ symbol_map = {}
 def load_symbols(fname):
     with open(fname, 'rb') as fp:
         reader = csv.reader(fp)
-        stock_exchange = fname.split('.')[0]
+        stock_exchange = fname.split('.')[0].upper()
         next(reader, None)  # skip the header
         for row in reader:
             symbol_map[row[0]] = [row[1], stock_exchange]

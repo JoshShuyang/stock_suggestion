@@ -1,4 +1,4 @@
-from app.PickStrategies import get_all, get_strategy, get_historical_strategy
+from app.SuggestStocks import get_all, get_strategy, get_historical_strategy
 from flask import render_template, flash, redirect, request
 from app import app
 from pprint import pprint
