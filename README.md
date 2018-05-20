@@ -1,6 +1,6 @@
 # CMPE285_final_project
 ## Stock Portfolio Suggestion Engine
-To run the application, please follow the is steps below:
+
 The project requires a handful of python2.7 packages. Install them using:
 
 pip install -r requirements.txt
